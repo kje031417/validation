@@ -15,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
+
 @Slf4j
 @Controller
 @RequestMapping("/validation/v2/items")
@@ -43,8 +44,13 @@ public class ValidationItemControllerV2 {
         return "validation/v2/addForm";
     }
 
+<<<<<<< HEAD
 //    @PostMapping("/add")
     public String addItemV1(@ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+=======
+    @PostMapping("/add")
+    public String addItem(@ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+>>>>>>> origin/master
 
         //검증 로직
         if (!StringUtils.hasText(item.getItemName())) {
@@ -79,6 +85,7 @@ public class ValidationItemControllerV2 {
         return "redirect:/validation/v2/items/{itemId}";
     }
 
+<<<<<<< HEAD
 //    @PostMapping("/add")
     public String addItemV2(@ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
 
@@ -190,6 +197,8 @@ public class ValidationItemControllerV2 {
         return "redirect:/validation/v2/items/{itemId}";
     }
 
+=======
+>>>>>>> origin/master
     @GetMapping("/{itemId}/edit")
     public String editForm(@PathVariable Long itemId, Model model) {
         Item item = itemRepository.findById(itemId);
